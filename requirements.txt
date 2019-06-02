@@ -1,0 +1,2 @@
+asyncpg==0.18.3
+pycrypto==2.6.1
