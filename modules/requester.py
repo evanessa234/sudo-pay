@@ -37,7 +37,7 @@ class Requester:
             "ORDER_ID": self.order_id,
             "CUST_ID": customer["customerId"],
             "TXN_AMOUNT": customer["txn_amount"],
-            "CALLBACK_URL": "https://pay.sudodevs.com/success",
+            "CALLBACK_URL": "http://127.0.0.1:5000/success",
             "CHANNEL_ID": "WEB",
             "INDUSTRY_TYPE_ID": "Retail"
         }
@@ -46,6 +46,7 @@ class Requester:
         data_template.update({"CHECKSUMHASH": checksum})
 
         self.data = data_template
+        print(self.data)
 
     async def do_req(self):
         """
@@ -54,7 +55,7 @@ class Requester:
         """
         await self.template_renderer()
         async with aiohttp.ClientSession() as session:
-            resp = await session.post(self.base_url_s, data=self.data)
+            resp = await session.post(self.base_url_prod, data=self.data)
             return await resp.text()
 
 

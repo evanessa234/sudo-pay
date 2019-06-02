@@ -17,6 +17,9 @@ def getter():
     resp = loop.run_until_complete(transaction.do_req())
     # print(resp) # = HEHE minor debugging
     return resp
-    
 
-app.run()
+@app.route('/success', methods=['POST', "GET"])
+def succ():
+    return "hi"
+
+app.run(debug=True)
