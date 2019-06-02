@@ -1,2 +1,4 @@
 asyncpg==0.18.3
+Flask==1.0.3
+aiohttp==3.5.4
 pycrypto==2.6.1
