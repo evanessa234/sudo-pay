@@ -36,7 +36,7 @@ class Requester:
             "WEBSITE": "WEBSTAGING",
             "ORDER_ID": self.order_id,
             "CUST_ID": customer["customerId"],
-            "TXN_AMOUNT": customer["txn_amount"],
+            "TXN_AMOUNT": str(round(float(customer["txn_amount"]), 2)),
             "CALLBACK_URL": "http://127.0.0.1:5000/success",
             "CHANNEL_ID": "WEB",
             "INDUSTRY_TYPE_ID": "Retail"
@@ -55,7 +55,7 @@ class Requester:
         """
         await self.template_renderer()
         async with aiohttp.ClientSession() as session:
-            resp = await session.post(self.base_url_prod, data=self.data)
+            resp = await session.post(self.base_url_s, data=self.data)
             return await resp.text()
 
 

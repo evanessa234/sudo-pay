@@ -47,9 +47,9 @@ class Database_handler:
         MOCK ==>
 
         {
-            'orderId': 'dhsldnss82347nad', 
-            'customerId': 'worhn3ir04972', 
-        '   txn_amount': '99999999999999999'
+            "orderId": "succmahdicc", 
+            "customerId": "bigdaddysmaldicc", 
+            "txn_amount": "999"
         }
         
         """
